@@ -40,6 +40,7 @@ public class GroupMemberDao extends ServiceImpl<GroupMemberMapper, GroupMember> 
 
     public List<Long> getMemberUidList(Long groupId) {
         List<GroupMember> list = lambdaQuery()
+
                 .eq(GroupMember::getGroupId, groupId)
                 .select(GroupMember::getUid)
                 .list();
